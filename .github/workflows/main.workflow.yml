@@ -1,0 +1,23 @@
+name: Docker Image CI
+on:
+  push:
+    branches:
+      - feat/devops
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v1
+        with:
+          java-version: '16'
+      - name: Gradle Wrapper Install
+        run: ./gradlew -v
+      - name: Assemble
+        run: ./gradlew clean build
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag fredoliveirace/imdb_22072021_fredoliveira-ce:latest
+      - name: Login on Docker hub
+        run: docker login --username fredoliveirace --password de61efef-32f5-4f6e-b1fe-428838a9fe7e
+      - name: Push image to repository
+        run: docker push fredoliveirace/imdb_22072021_fredoliveira-ce:latest

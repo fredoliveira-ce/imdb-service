@@ -1,0 +1,11 @@
+configurations {
+  compile.exclude module: "spring-boot-starter-tomcat"
+}
+
+dependencies {
+  api(project(":application:domain"))
+  api("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+  api("org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}")
+  implementation "io.springfox:springfox-swagger2:${swaggerVersion}"
+  implementation "io.springfox:springfox-swagger-ui:${swaggerVersion}"
+}

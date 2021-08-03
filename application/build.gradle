@@ -1,0 +1,46 @@
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+  }
+}
+
+apply plugin: 'application'
+apply plugin: 'org.springframework.boot'
+
+mainClassName = "nl.lunatech.ImdbServiceApplication"
+
+dependencies {
+  implementation(project(":application:domain"))
+  implementation(project(":application:data"))
+  implementation(project(":application:entrypoint"))
+}
+
+repositories {
+  mavenCentral()
+}
+
+subprojects {
+  apply plugin: "java-library"
+
+  repositories {
+    mavenCentral()
+  }
+
+  dependencies {
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+
+    testImplementation("org.junit.jupiter:junit-jupiter:${junitVersion}")
+    testImplementation("org.mockito:mockito-junit-jupiter:${mockitoVersion}")
+  }
+
+  test {
+    useJUnitPlatform()
+    testLogging {
+      events "passed", "skipped", "failed"
+    }
+  }
+}

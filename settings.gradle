@@ -1,0 +1,7 @@
+rootProject.name = 'imdb-service'
+include 'application'
+include 'application:domain'
+include 'application:data'
+include 'application:entrypoint'
+include 'component-tests'
+

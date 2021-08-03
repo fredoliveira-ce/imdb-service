@@ -1,0 +1,4 @@
+dependencies {
+  api(project(":application:domain"))
+  runtimeOnly "org.postgresql:postgresql:${postgresVersion}"
+}

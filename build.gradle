@@ -1,0 +1,11 @@
+ext {
+  springBootVersion = '2.5.3'
+  postgresVersion = '42.2.23'
+  lombokVersion = '1.18.20'
+  hibernateVersion = '5.4.15.Final'
+  h2Version = '1.4.200'
+  junitVersion = '5.7.2'
+  mockitoVersion = '3.11.2'
+  swaggerVersion = '2.9.2'
+  jwtVersion = '0.9.1'
+}
