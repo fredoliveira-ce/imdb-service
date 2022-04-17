@@ -23,8 +23,8 @@ curl --request POST \
   --url http://localhost:8080/login \
   --header 'content-type: application/json' \
   --data '{
-	"username": "lunatech",
-	"password": "7un@t3ch"
+	"username": "postgres",
+	"password": "postgres"
 }'
 ```
 

@@ -10,7 +10,7 @@ buildscript {
 apply plugin: 'application'
 apply plugin: 'org.springframework.boot'
 
-mainClassName = "nl.lunatech.ImdbServiceApplication"
+mainClassName = "nl.oliveira.ImdbServiceApplication"
 
 dependencies {
   implementation(project(":application:domain"))
